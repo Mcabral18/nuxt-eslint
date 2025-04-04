@@ -1,0 +1,42 @@
+{
+	"extends": "./.nuxt/tsconfig.json",
+	"compilerOptions": {
+		"target": "ESNext", // Target modern JavaScript (ESNext) output
+		"module": "ESNext", // Use ESNext module system
+		"moduleResolution": "Node", // Resolve modules as Node.js does
+		"allowJs": true, // Allow JavaScript files in the project
+		"checkJs": false, // Disable type-checking for JavaScript files
+		"strict": true, // Enable all strict type-checking options
+		"noEmit": true, // Prevent emitting output files
+		"isolatedModules": true, // Ensure each file is treated as a separate module
+		"esModuleInterop": true, // Enable interoperability between CommonJS and ES Modules
+		"skipLibCheck": true, // Skip type-checking of declaration files
+		"forceConsistentCasingInFileNames": true, // Enforce consistent file casing
+		"baseUrl": ".", // Base directory for resolving non-relative module names
+		"paths": {
+			"~/*": [
+				"./*"
+			], // Resolve `~` alias to the root directory
+			"@/*": [
+				"./*"
+			] // Resolve `@` alias to the root directory
+		}
+	},
+	"include": [
+		"plugins/**/*.ts", // Include TypeScript plugins
+		"composables/**/*.ts", // Include TypeScript composables
+		"middleware/**/*.ts", // Include TypeScript middleware
+		"store/**/*.ts", // Include TypeScript Vuex store
+		"assets/ts/**/*.ts", // Include TypeScript files in your assets/ts directory
+		"assets/js/**/*.js", // Include JavaScript files in your assets/js directory
+		"nuxt.config.ts" // Include Nuxt.js configuration file if in TypeScript
+	],
+	"exclude": [
+		"node_modules", // Exclude node_modules
+		"dist", // Exclude build outputs
+		".nuxt", // Exclude Nuxt.js build directory
+		"static", // Exclude static files
+		"test", // Exclude test files (if not using TypeScript for tests)
+		"coverage" // Exclude coverage directory (if using a coverage tool)
+	]
+}
